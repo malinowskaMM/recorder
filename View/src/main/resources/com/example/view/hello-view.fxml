@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="190.0" prefWidth="444.0" spacing="20.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.view.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <AnchorPane prefHeight="163.0" prefWidth="396.0">
+         <children>
+            <Button fx:id="pause" layoutX="69.0" layoutY="50.0" mnemonicParsing="false" onAction="#pause" prefHeight="46.0" prefWidth="46.0" style="-fx-background-color: white;" />
+            <Button fx:id="record" layoutX="14.0" layoutY="50.0" mnemonicParsing="false" onAction="#record" prefHeight="46.0" prefWidth="46.0" style="-fx-background-color: white;" />
+            <Button fx:id="replay" layoutX="244.0" layoutY="110.0" mnemonicParsing="false" onAction="#play" prefHeight="18.0" prefWidth="108.0" text="Odtworz" />
+            <Label fx:id="text" layoutX="125.0" layoutY="64.0" prefHeight="18.0" prefWidth="218.0" />
+            <Button fx:id="send" layoutX="126.0" layoutY="110.0" mnemonicParsing="false" onAction="#sendRecord" prefHeight="18.0" prefWidth="108.0" text="Wyślij " />
+            <RadioButton fx:id="receiveChoose" layoutX="244.0" layoutY="14.0" mnemonicParsing="false" onAction="#updateChoose" text="odbierz">
+                <toggleGroup>
+                    <ToggleGroup fx:id="wariant" />
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="sendChoose" layoutX="318.0" layoutY="14.0" mnemonicParsing="false" onAction="#updateChoose" text="wyslij" toggleGroup="$wariant" />
+            <Button fx:id="receive" layoutX="6.0" layoutY="110.0" mnemonicParsing="false" onAction="#sendRecord" prefHeight="18.0" prefWidth="108.0" text="Wyślij " />
+         </children></AnchorPane>
+   </children>
+</VBox>
