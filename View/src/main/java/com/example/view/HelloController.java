@@ -29,14 +29,19 @@ public class HelloController {
     @FXML
     void initialize(){
         rec = new Recorder();
+        sr = new SendRecord();
+        rr = new ReceiveRecord();
 
-        Image imgRecord = new Image("D:\\telekomunikacjaZad4\\View\\src\\main\\resources\\com\\example\\view\\play.jpg");
+        send.setDisable(true);
+        receive.setDisable(true);
+
+        Image imgRecord = new Image("C:\\telekomunikacjaZad4\\View\\src\\main\\resources\\com\\example\\view\\play.jpg");
         ImageView viewRecord = new ImageView(imgRecord);
         viewRecord.setFitHeight(40);
         viewRecord.setPreserveRatio(true);
         record.setGraphic(viewRecord);
 
-        Image img = new Image("D:\\telekomunikacjaZad4\\View\\src\\main\\resources\\com\\example\\view\\stop.jpg");
+        Image img = new Image("C:\\telekomunikacjaZad4\\View\\src\\main\\resources\\com\\example\\view\\stop.jpg");
         ImageView view = new ImageView(img);
         view.setFitHeight(32);
         view.setPreserveRatio(true);
