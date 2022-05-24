@@ -6,7 +6,7 @@ import java.net.Socket;
 public class SendRecord {
 
     void send() throws IOException {
-        Socket s = new Socket("192.168.0.4",1234);
+        Socket s = new Socket("192.168.0.4",9999);
 
         File record = new File("record");
         FileInputStream fileInputStream = new FileInputStream(record);

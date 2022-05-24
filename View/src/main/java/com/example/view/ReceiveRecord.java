@@ -7,8 +7,7 @@ import java.net.Socket;
 public class ReceiveRecord {
 
     void receive() throws IOException {
-        ServerSocket ss = new ServerSocket(1234);
-        while(true) {
+        ServerSocket ss = new ServerSocket(9999);
             Socket s = ss.accept();
 
             DataInputStream dataInputStream = new DataInputStream(s.getInputStream());
@@ -38,7 +37,7 @@ public class ReceiveRecord {
 
 
                 }
-            }
+
         }
     }
 }
