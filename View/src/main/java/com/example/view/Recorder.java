@@ -1,8 +1,5 @@
 package com.example.view;
 
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
-
 import javax.sound.sampled.*;
 import java.io.File;
 
