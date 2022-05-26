@@ -1,10 +1,7 @@
 package com.example.view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.RadioButton;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -21,6 +18,7 @@ public class HelloController {
     @FXML Button receive;
     @FXML RadioButton sendChoose;
     @FXML RadioButton receiveChoose;
+    @FXML TextField sampleRate;
 
     Recorder rec;
     SendRecord sr;
@@ -29,14 +27,19 @@ public class HelloController {
     @FXML
     void initialize(){
         rec = new Recorder();
+        sr = new SendRecord();
+        rr = new ReceiveRecord();
 
-        Image imgRecord = new Image("D:\\telekomunikacjaZad4\\View\\src\\main\\resources\\com\\example\\view\\play.jpg");
+        send.setDisable(true);
+        receive.setDisable(true);
+
+        Image imgRecord = new Image("C:\\telekomunikacjeZad4_2\\View\\src\\main\\resources\\com\\example\\view\\play.jpg");
         ImageView viewRecord = new ImageView(imgRecord);
         viewRecord.setFitHeight(40);
         viewRecord.setPreserveRatio(true);
         record.setGraphic(viewRecord);
 
-        Image img = new Image("D:\\telekomunikacjaZad4\\View\\src\\main\\resources\\com\\example\\view\\stop.jpg");
+        Image img = new Image("C:\\telekomunikacjeZad4_2\\View\\src\\main\\resources\\com\\example\\view\\stop.jpg");
         ImageView view = new ImageView(img);
         view.setFitHeight(32);
         view.setPreserveRatio(true);
@@ -66,7 +69,8 @@ public class HelloController {
 
     @ FXML void record() {
         text.setText("Nagrywanie...");
-        rec.captureAudio();
+        String sampleRateString = sampleRate.getText();
+        rec.captureAudio(Float.parseFloat(sampleRateString));
     }
 
     @ FXML void pause() {

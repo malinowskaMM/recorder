@@ -25,9 +25,9 @@ public class Recorder {
         }
     }
 
-    public void captureAudio() {
+    public void captureAudio(float sampleRate) {
         try {
-            audioFormat = new AudioFormat(10000.0F, 16, 1, true, false);
+            audioFormat = new AudioFormat(sampleRate, 16, 1, true, false);
             // sampleRate, sampleSizeInBits, channels, signed, bigEndian)
             DataLine.Info dataLineInfo = new DataLine.Info(TargetDataLine.class, audioFormat);
             targetDataLine = (TargetDataLine) AudioSystem.getLine(dataLineInfo);
